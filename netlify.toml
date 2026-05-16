@@ -1,7 +1,6 @@
 [build]
   base = "Projects/ai-saas"
-  command = "npm run build"
-  publish = "Projects/ai-saas/.next"
+  command = "npm install && npm run build"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
