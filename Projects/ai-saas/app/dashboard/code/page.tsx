@@ -36,7 +36,7 @@ export default function CodePage() {
       if (!API_KEY) throw new Error('NEXT_PUBLIC_GEMINI_API_KEY is not set.');
 
       const genAI = new GoogleGenerativeAI(API_KEY);
-      const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
+      const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
 
       const fullPrompt = `Write clean, well-commented ${l} code for the following task:
 
@@ -80,7 +80,7 @@ Requirements:
         <div>
           <h1 style={{ fontSize: '1.4rem', fontWeight: 800 }}>Code Generation</h1>
           <p style={{ color: '#6b7280', fontSize: '0.82rem' }}>
-            Powered by <span style={{ color: '#67e8f9' }}>Gemini 2.0 Flash</span>
+            Powered by <span style={{ color: '#67e8f9' }}>Gemini 2.5 Flash</span>
           </p>
         </div>
       </div>
@@ -167,7 +167,7 @@ Requirements:
               <div style={{ width: 12, height: 12, borderRadius: '50%', background: '#f59e0b' }} />
               <div style={{ width: 12, height: 12, borderRadius: '50%', background: '#22c55e' }} />
               <span style={{ color: '#6b7280', fontSize: '0.8rem', marginLeft: 8 }}>
-                {lang} — Gemini 2.0 Flash
+                {lang} — Gemini 2.5 Flash
               </span>
             </div>
             {code && (

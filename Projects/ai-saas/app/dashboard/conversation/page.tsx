@@ -40,7 +40,7 @@ export default function ConversationPage() {
       }
 
       const genAI = new GoogleGenerativeAI(API_KEY);
-      const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
+      const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
 
       // Build chat history for multi-turn
       const history = updated.slice(0, -1).map((m) => ({
@@ -113,7 +113,7 @@ export default function ConversationPage() {
           <div>
             <h1 style={{ fontSize: '1.4rem', fontWeight: 800 }}>Conversation</h1>
             <p style={{ color: '#6b7280', fontSize: '0.82rem' }}>
-              Powered by <span style={{ color: '#a5b4fc' }}>Gemini 2.0 Flash</span>
+              Powered by <span style={{ color: '#a5b4fc' }}>Gemini 2.5 Flash</span>
             </p>
           </div>
         </div>
