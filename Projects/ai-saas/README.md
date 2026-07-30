@@ -1,38 +1,141 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+﻿# 🤖 Gbot — AI SaaS Platform
 
-## Getting Started
+> A unified, production-ready **AI content generation platform** that puts conversation, code, image, music, and video creation behind a single polished interface.
 
-First, run the development server:
+🌐 **Live demo:** [ai-saas-ruby-two.vercel.app](https://ai-saas-ruby-two.vercel.app)
+🛠️ **Repo layout:** monorepo — actual app lives in `Projects/ai-saas/`
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+![Next.js](https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js)
+![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript)
+![Tailwind](https://img.shields.io/badge/Tailwind-4-38B2AC?style=for-the-badge&logo=tailwind-css)
+![Gemini](https://img.shields.io/badge/AI-Google%20Gemini-4285F4?style=for-the-badge&logo=google)
+![Vercel](https://img.shields.io/badge/Deploy-Vercel-000000?style=for-the-badge&logo=vercel)
+
+---
+
+## ✨ Features
+
+- 💬 **Conversation** — chat with the latest Gemini model, streaming responses
+- 💻 **Code Generation** — generate clean code in any language on demand
+- 🖼️ **Image Generation** — text-to-image via the Gemini multimodal API
+- 🎵 **Music Generation** — create original audio compositions
+- 🎬 **Video Generation** — generate compelling short-form video content
+- 🎨 **Polished landing page** — animated typewriter hero, testimonials, pricing tiers
+- 📊 **Dashboard** — sidebar-driven, 5 tools, free-usage counter with Pro upgrade CTA
+- ⚙️ **Settings** — account / subscription management
+- 💎 **Freemium model** — 5 free generations, then Pro at $20/month
+
+---
+
+## 🏗️ Architecture
+
+```
+Ai-saas/
+├── netlify.toml                    # Netlify build config (base = Projects/ai-saas)
+└── Projects/ai-saas/
+    ├── package.json                # next 16, react 19, @google/generative-ai
+    ├── next.config.ts              # static export, trailingSlash, unoptimized images
+    ├── app/
+    │   ├── layout.tsx              # root layout
+    │   ├── globals.css             # tailwind + global styles
+    │   ├── page.tsx                # landing (hero, features, testimonials, pricing)
+    │   └── dashboard/
+    │       ├── layout.tsx          # sidebar shell
+    │       ├── page.tsx            # tool grid + free-usage counter
+    │       ├── conversation/       # chat UI (Gemini streaming)
+    │       ├── code/               # code generator
+    │       ├── image/              # text-to-image
+    │       ├── music/              # text-to-music
+    │       ├── video/              # text-to-video
+    │       ├── settings/           # account settings
+    │       └── _components/
+    │           └── Sidebar.tsx     # navigation
+    └── public/                     # static assets
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The data flow is identical for every tool: the dashboard calls a Next.js client component which talks **directly to the Google Generative AI SDK** in the browser using a `NEXT_PUBLIC_GEMINI_API_KEY`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 Quick Start
 
-## Learn More
+### Prerequisites
 
-To learn more about Next.js, take a look at the following resources:
+- **Node.js** 18.17 or later
+- A **Google Gemini API key** — get one at [aistudio.google.com](https://aistudio.google.com/apikey)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Install & run
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+cd Projects/ai-saas
+npm install
+```
 
-## Deploy on Vercel
+Create `.env.local`:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+NEXT_PUBLIC_GEMINI_API_KEY=your_gemini_key_here
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Then:
 
-<!-- Redeploy trigger: updated at 2026-05-16 13:06 UTC -->
+```bash
+npm run dev          # http://localhost:3000
+npm run build        # static export → ./out
+npm run start        # next start
+npm run lint         # eslint
+```
+
+Open the dashboard at [http://localhost:3000/dashboard](http://localhost:3000/dashboard).
+
+---
+
+## 🔑 Environment Variables
+
+| Variable | Required | Purpose |
+|---|---|---|
+| `NEXT_PUBLIC_GEMINI_API_KEY` | ✅ | Google AI Studio key. Exposed to the client because the API is called directly from the browser. |
+
+> ⚠️ The `NEXT_PUBLIC_` prefix is intentional. **Do not** put a server-only secret here. For production, proxy Gemini calls through a Next.js API route or a serverless function so the key is never shipped to clients.
+
+---
+
+## 🎨 Design System
+
+- **Color palette:** indigo-500 → violet-500 gradient (`#6366f1 → #8b5cf6`)
+- **Typography:** Geist (loaded via `next/font`)
+- **Card style:** `rgba(255,255,255,0.03)` background, `rgba(255,255,255,0.08)` border, `24px` radius
+- **Motion:** CSS-only `transition: opacity 0.4s, transform 0.4s` typewriter + hover lift
+
+---
+
+## 📦 Deployment
+
+The repo ships with a **`netlify.toml`** that builds and publishes the static export:
+
+```toml
+[build]
+  base    = "Projects/ai-saas"
+  command = "npm install && npm run build"
+  publish = "out"
+```
+
+You can deploy to **Vercel** with one click — `next.config.ts` already enables `output: "export"`, so `next build` produces a fully static site in `./out` that any CDN can host.
+
+---
+
+## 🗺️ Roadmap
+
+- [ ] Move all Gemini calls server-side (proxy routes) so the API key is not exposed
+- [ ] Add Clerk / Supabase auth for real user accounts
+- [ ] Stripe checkout for the $20/mo Pro tier
+- [ ] Usage metering (currently a static "5 free generations" copy)
+- [ ] Persistent conversation history
+- [ ] Voice input for the conversation tool
+
+---
+
+## 📄 License
+
+MIT — see `LICENSE` for details.
