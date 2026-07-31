@@ -6,30 +6,30 @@
 ![Last Commit](https://img.shields.io/github/last-commit/orange-05/Ai-saas?style=for-the-badge)
 ![Repo Size](https://img.shields.io/github/repo-size/orange-05/Ai-saas?style=for-the-badge)
 
-> **AI-Powered SaaS Platform** — Full-stack Next.js application with AI integration, deployed on Netlify.
+> **AI-Powered SaaS Platform** -- Full-stack Next.js application with AI integration, deployed on Netlify.
 
 ---
 
-## 🌟 Overview
+## Overview
 
 **Ai-saas** is a modern Software-as-a-Service starter built with Next.js 14+ (App Router), TypeScript, and AI capabilities. Designed for rapid iteration and production deployment on Netlify with edge functions.
 
 ---
 
-## ✨ Features
+## Features
 
-- **Next.js 14 App Router** — Server Components, Server Actions, Streaming
-- **TypeScript Strict Mode** — End-to-end type safety
-- **AI Integration** — OpenAI / Anthropic / local model support
-- **Authentication** — NextAuth.js (email, OAuth, magic links)
-- **Database** — Prisma ORM (PostgreSQL/Supabase/PlanetScale)
-- **Styling** — Tailwind CSS + shadcn/ui components
-- **Deployment** — Netlify (edge functions, preview deploys)
-- **Observability** — Vercel Analytics / Sentry ready
+- **Next.js 14 App Router** -- Server Components, Server Actions, Streaming
+- **TypeScript Strict Mode** -- End-to-end type safety
+- **AI Integration** -- OpenAI / Anthropic / local model support
+- **Authentication** -- NextAuth.js (email, OAuth, magic links)
+- **Database** -- Prisma ORM (PostgreSQL/Supabase/PlanetScale)
+- **Styling** -- Tailwind CSS + shadcn/ui components
+- **Deployment** -- Netlify (edge functions, preview deploys)
+- **Observability** -- Vercel Analytics / Sentry ready
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 | Layer | Technology |
 |-------|------------|
@@ -44,38 +44,38 @@
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```text
 Ai-saas/
-├── Projects/
-│   └── ai-saas/              # Main application
-│       ├── app/              # Next.js App Router pages
-│       │   ├── (auth)/       # Auth route group
-│       │   ├── (dashboard)/  # Protected dashboard
-│       │   ├── api/          # API routes / Server Actions
-│       │   └── layout.tsx    # Root layout
-│       ├── components/       # React components
-│       │   ├── ui/           # shadcn/ui primitives
-│       │   └── features/     # Feature-specific components
-│       ├── lib/              # Utilities, configs
-│       │   ├── auth.ts       # NextAuth config
-│       │   ├── db.ts         # Prisma client
-│       │   └── ai.ts         # AI provider setup
-│       ├── prisma/
-│       │   └── schema.prisma # Database schema
-│       ├── public/           # Static assets
-│       ├── netlify.toml      # Netlify deployment config
-│       ├── package.json
-│       ├── tsconfig.json
-│       └── tailwind.config.ts
-├── README.md                 # This file
-└── netlify.toml              # Root Netlify config (monorepo)
++-- Projects/
+|   +-- ai-saas/              # Main application
+|       +-- app/              # Next.js App Router pages
+|       |   +-- (auth)/       # Auth route group
+|       |   +-- (dashboard)/  # Protected dashboard
+|       |   +-- api/          # API routes / Server Actions
+|       |   +-- layout.tsx    # Root layout
+|       +-- components/       # React components
+|       |   +-- ui/           # shadcn/ui primitives
+|       |   +-- features/     # Feature-specific components
+|       +-- lib/              # Utilities, configs
+|       |   +-- auth.ts       # NextAuth config
+|       |   +-- db.ts         # Prisma client
+|       |   +-- ai.ts         # AI provider setup
+|       +-- prisma/
+|       |   +-- schema.prisma # Database schema
+|       +-- public/           # Static assets
+|       +-- netlify.toml      # Netlify deployment config
+|       +-- package.json
+|       +-- tsconfig.json
+|       +-- tailwind.config.ts
++-- README.md                 # This file
++-- netlify.toml              # Root Netlify config (monorepo)
 ```
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - Node.js 18.17+
@@ -97,8 +97,8 @@ pnpm install
 cp .env.example .env
 # Edit .env with your keys:
 # DATABASE_URL=postgresql://...
-# NEXTAUTH_SECRET=...
-# OPENAI_API_KEY=...
+# NEXTAUTH_SECRET=***
+# OPENAI_API_KEY=***
 # NEXT_PUBLIC_APP_URL=http://localhost:3000
 
 # Database setup
@@ -110,11 +110,11 @@ pnpm db:push
 pnpm dev
 ```
 
-Visit `http://localhost:3000`.
+Visit http://localhost:3000.
 
 ---
 
-## ⚙️ Environment Variables
+## Environment Variables
 
 | Variable | Required | Description |
 |----------|----------|-------------|
@@ -128,7 +128,7 @@ Visit `http://localhost:3000`.
 
 ---
 
-## 📦 Deployment (Netlify)
+## Deployment (Netlify)
 
 ### Automatic (Recommended)
 1. Push to GitHub
@@ -155,7 +155,7 @@ Visit `http://localhost:3000`.
 
 ---
 
-## 🧪 Available Scripts
+## Available Scripts
 
 ```bash
 pnpm dev          # Start dev server
@@ -171,7 +171,7 @@ pnpm db:migrate   # Run migrations
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repo
 2. Create feature branch: `git checkout -b feat/amazing-feature`
@@ -181,13 +181,13 @@ pnpm db:migrate   # Run migrations
 
 ---
 
-## 📄 License
+## License
 
-**MIT License** — See LICENSE file (add one if missing).
+**MIT License** -- See LICENSE file (add one if missing).
 
 ---
 
-## 👤 Author
+## Author
 
 **Karthikeyan K** (BCA Analytics)
 - GitHub: [@orange-05](https://github.com/orange-05)
@@ -195,4 +195,4 @@ pnpm db:migrate   # Run migrations
 
 ---
 
-*Build fast, ship faster.* — Last updated July 2026
+*Build fast, ship faster.* -- Last updated July 2026
