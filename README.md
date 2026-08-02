@@ -3,8 +3,6 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)
 ![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)
-![Last Commit](https://img.shields.io/github/last-commit/orange-05/Ai-saas?style=for-the-badge)
-![Repo Size](https://img.shields.io/github/repo-size/orange-05/Ai-saas?style=for-the-badge)
 
 > **AI-Powered SaaS Platform** -- Full-stack Next.js application with AI integration, deployed on Netlify.
 
